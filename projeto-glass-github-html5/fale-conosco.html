@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt-br">
+	<meta charset="utf-8"/>
+	<title> </title>
+	<link rel="stylesheet" type="text/css" href="_css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="_css/form.css">
+</head>
+
+<script language="javascript" src="_javascript/funcoes.js"> 
+</script>
+
+<script>
+	function calcula_total(){
+		var total = 0;
+		var qtd = parseInt(document.getElementById('Iqtd').value);
+		total = qtd* 1500;
+		document.getElementById('Ipco').value = total;
+		}
+</script>
+
+<body>
+<div id="interface">	
+		
+	<header id="cabecalho">
+		<hgroup>	
+			<h1>Google Glass</h1>
+			<h2>A revolução do Google está chegando</h2>
+		</hgroup>
+
+		<img id="icone" src="_imagens/contato.png"/>
+
+		<nav id="menu">
+			<h1>Menu Principal</h1>
+			<ul>
+				<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> Home </a>
+				</li>
+				<li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> <a href="specs.html"> Especificações  </a> 
+				</li>
+				<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> <a href="fotos.html"> Fotos  </a>
+				</li>
+				<li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> <a href="multimidia.html"> Multimídia  </a> 
+				</li>
+				<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"> <a href="index.html"> <a href="fale-conosco.html"> Fale conosco  </a> 
+				</li>
+			</u>	
+		</nav>	
+	</header>
+		
+	<header id="cabecalho-artigo">
+		<h3>Fale Conosco > Contato</h3>
+		<h1>Formulário de Contato</h1>
+		<h2>por Gilberto Marinho</h2>
+		<h3 class="direita"> Atualizado em 01/Maio/2013</h3>
+	</header>
+
+	<form method="post" action="alvo" oninput="calcula_total();"> <!-- oninput faz uma acao quando detecta digitacao-->		
+		<fieldset id="usuario"> <!--cakpo de infrmacoes-->
+			<legend>Identificação do Usuário</legend><!--titulo do campo-->
+			<p> <label for="Inome" >Nome:</label><!--for cria relacao com objeto-->
+			<input type="text" name="Nnome" id="Inome" size="20" maxlength="30" placeholder="Nome completo"  /> </p>
+				
+			<p><label for="Isenha" >Senha:</label>
+ <input type="password" name="Nsenha" id="Isenha" size="10" maxlength="8" placeholder="8 dígitos" > 
+			
+			<p><label for="Iemail" >E-mail:</label>
+<input type="email" name="Nemail" id="Iemail" size="20" maxlength="40"> </p> <!-- faz validacao @ e .dominio -->
+			
+		<fieldset id="sexo">
+			<legend>Sexo:</legend>
+			<input type="radio" name="Nsexo" id="Imasc" checked/> <!-- marcado -->
+			<label for="Imasc"> Masculino </label></br>
+			<input type="radio" name="Nsexo" id="Ifem"/><!--ambos os radios com mesmo name-->
+			<label for="Ifem">Feminino</label>	
+		
+		</fieldset>
+			<p><label for="Idata">Data de Nascimento:</label> 
+			<input type="date" name="Ndata" id="Idata"/></p>
+		</fieldset>
+			
+		<fieldset id="endereco">			
+			<legend>Endereço do Usuário</legend>
+			<p><label for="Iend"> Logradouro:</label>
+			<input type="text" name="Nend" id="Iend" size="13" maxlength="80" placeholder="rua, avenida..."/> </p>
+			<p><label for="Inum">Número:</label>
+			<input type="number" name="Nnum" id="Inum" min="0" max="9999"/></p>
+			<p><label for="Iest">Estado</label>
+			<select name="Nest" id="Iest"><!--Cx de selecao com as opcoes option-->
+				<option value="zero" selected > Selecione um Estado</option> <!--opcao selecionada-->
+				<optgroup label="Região Sudeste">
+            		<option value="RJ">Rio de Janeiro</option>
+            		<option value="SP">São Paulo</option>
+            		<option value="MG" >Minas Gerais</option>
+        		</optgroup>
+        
+				<optgroup label="Região Sul">
+            		<option value="PR">Paraná</option>
+            		<option value="SC">Santa Catarina</option>
+            		<option value="RS">Rio Grande do Sul</option>
+        		</optgroup>
+        		
+				<optgroup label="Região Centro-Oeste">
+            		<option value="BSB">Brasília</option>
+       		</optgroup>
+			</select> </p>
+					
+			<p><label for="Icid">Cidade:</label>
+			 <input type="text" name="Ncid" id="Icid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p> <!--list para utilizar a lista de dados cidades como sugestoes na cx de txt-->
+			<datalist id="cidades"> <!--lista de dados--> 
+        		<option value="Rio de Janeiro"></option>
+        		<option value="Nova Iguaçu"></option>
+        		<option value="Niterói"></option>
+        		<option value="Belford Roxo"></option>
+        		<option value="Sao Paulo"></option>
+    		</datalist>
+		</fieldset>
+
+		<fieldset id="mensagem">
+			<legend>Mensagem do Usuário</legend>
+			<p><label for="Iurg">Grau de Urgência:</label>
+			Min<input type="range" name="Nurg" id="Iurg" step="2" min="0" max="10"/>Max </p> <!-- step define um pulo no cursor-->
+			
+			<p><label for="Imsg">Mensagem:</label>
+			<textarea name="Nmsg" id="Imsg" cols="40" rows="5" placeholder="Escreva aqui"> </textarea></p>
+
+		</fieldset>
+			
+		<fieldset id="compra">
+			<legend>Quero um Google Glass</legend>
+			<p><input type="checkbox" name="Nped" id="Iped" checked/> 
+<label for="Iped">Gostaria de adquirir um Google Glass quando disponível</label>
+</p>
+			<p><label for="Icor">Cor:</label>
+			<input type="color" name="Ncor" id="Icor" value="#0000ff"/></p><!--cx de cor-->
+			<p><label for="Iqtd">Quantidade:</label>
+			<input type="number" name="Nqtd" id="Iqtd" min="0" max="30" value="0"/>
+</p> 
+			<p><label for="Ipco">Preço Total: R$</label>
+			<input type="text" name="Npco" id="Ipco" placeholder="Total a pagar." readonly/></p><!--readonly so leitura-->
+		</fieldset>
+			<!--<input type="submit" value="enviar" />-->
+		<input type="image" name="Nenviar" id="Ienviar" src="_imagens/botao-enviar.png"/>
+	</form>  		
+		
+		
+		
+		
+		<footer id="rodape">
+			<p>Copyright 2013 - by Gilberto Marinho  <br>
+			<a href="http:// " target="_blank"> Facebook </a> | 
+			<a href="http:// " target="_blank">Twitter </a>
+			</p>
+		</footer>
+	
+	</div>
+</body>
+</html>

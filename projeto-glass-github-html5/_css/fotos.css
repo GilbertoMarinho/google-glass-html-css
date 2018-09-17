@@ -1,0 +1,77 @@
+@charset "utf_8";
+	ul#album-fotos {
+		width: 700px;
+		margin: 0 auto;
+		padding: 50px; 
+		list-style:none; /*remover simbolos da lista*/
+		overflow: hidden; /*vai ocultar conteudos que nao caibam na tela*/
+	
+	}
+	
+	ul#album-fotos li{
+		float:left; /*todos os elementos se deslocam para esqd ficando em linha a partir da esquerda*/
+		width:200px;
+		height:200px; /*cada elemento da lista vira uma caixa de 200x200*/
+		margin: 10px; /*criar espacamentos entre as caixas*/
+		border: 5px solid #ffffff;
+		box-shadow:1px 1px 3px rgba(0,0,0,0.4); /*criar sombreamento*/ 
+		background-position: 50% 50%; /*centralizar planodefundo/imagens */
+		background-size: 400px; /*tamanho do planodefundo/imagens*/
+		transition: all 0.4s ease-in; /*define as caracteristicas e o tempo que leva para uma transformacao acontercer*/
+	}
+	
+	ul#album-fotos li:hover {
+	background-size: 200px 200px; /*enquadra a imagem de fundo para ficar do tamanho do box*/
+	background-position: 0px 0px;
+	transform: scale(1.5); /*zoom de 1.5*/
+	
+	}
+	
+	ul#album-fotos li span{
+		opacity:0; /*esconder legendada*/
+		color: #ffffff;
+		text-shadow: 1px 1px 1px #000000; /*sombreamento do texto*/
+		background-color: rgba(0,0,0,.3);
+		font-size: 9pt;
+		line-height:370px; /*descer a legenda*/
+		padding: 5px;
+	}
+	
+	ul#album-fotos li:hover span{
+		opacity:1; /*mostrar span quando mouse passa em li*/
+	}
+	
+	li#foto01{ /*insere uma imagem no plano de fundo*/
+		background: url("../_imagens/galeria-01.jpg") no-repeat;
+		}
+		
+	li#foto02{
+		background: url("../_imagens/galeria-02.jpg") no-repeat;
+		}
+	li#foto03{
+		background: url("../_imagens/galeria-03.jpg") no-repeat;
+		}
+	li#foto04{
+		background: url("../_imagens/galeria-04.jpg") no-repeat;
+		}
+	li#foto05{
+		background: url("../_imagens/galeria-05.jpg") no-repeat;
+		}
+	li#foto06{
+		background: url("../_imagens/galeria-06.jpg") no-repeat;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

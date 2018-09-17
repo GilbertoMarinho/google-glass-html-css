@@ -1,0 +1,41 @@
+<html>
+<head lang="pt-br">
+	<meta charset= "utf-8" />
+	<title> Java teste </title>
+</head>
+<script> 
+	var quebrada = false; //lampada nao quebrada
+	function muda_lampada(tipo){
+		
+		if(tipo == 1){
+		arquivo = "../_imagens/lampada-apagada.jpg";
+			}
+		if(tipo == 2){
+		arquivo = "../_imagens/lampada-acesa.jpg";
+			}
+		if(tipo == 3){
+		arquivo = "../_imagens/lampada-quebrada.jpg";
+			}
+			
+		if(!quebrada){//se nao estiver quebrada pega imagem de arquivo
+			document.getElementById("lampada").src = arquivo;
+			if(tipo == 3){
+				quebrada ="true"; // se clicka a lampada passa a estar quebrada
+			}
+		}
+	}
+</script>
+
+<body>
+		
+		<img src="../_imagens/lampada-apagada.jpg" id="lampada" onmouseout="muda_lampada(1)" onmousemove="muda_lampada(2)" onclick="muda_lampada(3)">
+	<!-- mousefora passa parametro 1; mousedentro passa parametro 2; clicka passa parametro 3 -->
+</body>
+</html>
+		
+		
+		
+		
+
+
+
